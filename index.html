@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
@@ -47,35 +47,35 @@
                             <div class="row mb-3">
                                 <label for="names" class="col-sm-3 col-form-label">Nombre y Apellido</label>
                                 <div class="col-sm-9">
-                                    <input type="text" name="names" id="names" class="form-control">
+                                    <input type="text" name="names" id="names" class="form-control" required />
                                 </div>
                             </div>
 
                             <div class="row mb-3">
                                 <label for="names" class="col-sm-3 col-form-label">Alias</label>
                                 <div class="col-sm-9">
-                                    <input type="text" name="alias" id="alias" class="form-control">
+                                    <input type="text" name="alias1" id="alias1" class="form-control"  required />
                                 </div>
                             </div>
 
                             <div class="row mb-3">
                                 <label for="names" class="col-sm-3 col-form-label">RUT</label>
                                 <div class="col-sm-9">
-                                    <input type="text" name="rut" id="rut" class="form-control">
+                                    <input type="text" id="rut" name="rut" placeholder="Ingrese RUT" class="form-control claseRut" required />
                                 </div>
                             </div>
 
                             <div class="row mb-3">
                                 <label for="names" class="col-sm-3 col-form-label">Email</label>
                                 <div class="col-sm-9">
-                                    <input type="email" name="email" id="email" class="form-control">
+                                    <input type="email" name="email" id="email" class="form-control" required />
                                 </div>
                             </div>
 
                             <div class="row mb-3">
                                 <label for="names" class="col-sm-3 col-form-label">Regi&oacute;n</label>
                                 <div class="col-sm-9">
-                                    <select name="region" id="region" class="form-control">
+                                    <select name="region" id="region" class="form-control" required>
                                         <option value=""></option>
                                     </select>
                                 </div>
@@ -84,7 +84,7 @@
                             <div class="row mb-3">
                                 <label for="names" class="col-sm-3 col-form-label">Comuna</label>
                                 <div class="col-sm-9">
-                                    <select name="comuna" id="comuna" class="form-control">
+                                    <select name="comuna" id="comuna" class="form-control" required>
                                         <option value=""></option>
                                     </select>
                                 </div>
@@ -93,7 +93,7 @@
                             <div class="row mb-3">
                                 <label for="names" class="col-sm-3 col-form-label">Candidatos</label>
                                 <div class="col-sm-9">
-                                    <select name="candidato" id="candidato" class="form-control">
+                                    <select name="candidato" id="candidato" class="form-control" required>
                                         <option value=""></option>
                                     </select>
                                 </div>
@@ -119,7 +119,7 @@
                             
                                 <div class="row mb-3 mt-2">
                                     <div class="col-sm-12 col-md-12">
-                                        <button type="submit"  class="btn btn-primary">Enviar</button>
+                                        <button type="submit"  class="btn btn-primary" onclick="sendForm()">Enviar</button>
                                     </div>
 
                                 </div>
@@ -133,5 +133,22 @@
     </div>
     </div>
 </body>
+<script>
+    // Initialize our function when the document is ready for events.
+    $(document).ready(function() {
+        function sendForm() {
+            alert('Boton Enviar');
+        }
+        //sendForm()
 
+        $("input.alias1").bind('keypress', function(event) {
+            var regex = new RegExp("^[a-zA-Z0-9 ]+$");
+            var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
+            if (!regex.test(key)) {
+                event.preventDefault();
+                return false;
+            }
+        });
+    });
+</script>
 </html>

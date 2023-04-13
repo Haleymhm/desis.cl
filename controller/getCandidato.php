@@ -7,7 +7,7 @@
 
         $rows[] = ["id"=>0, "candidato"=>"Seleccione un opci&oacute;n"];
         while ($r = mysqli_fetch_assoc($result)) {
-            $rows[] = ["id"=>$r['id'], "candidato"=>$r['id']];
+            $rows[] = ["id"=>intval($r['id']), "candidato"=>$r['id']];
         }
 
         $response = ['status' => 'OK',
