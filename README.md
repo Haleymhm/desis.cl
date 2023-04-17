@@ -8,9 +8,12 @@ Tener instalado Php 8.x,  Mysql 5.6 o superior
 ## Instalación
 
 1. Clonar el proyecto
-   ` git clone https://github.com/Haleymhm/python-fonasa.git `
+   ` https://github.com/Haleymhm/desis.cl.git `
 
 2. Ingresar a la carpeta del proyecto
     ``` 
     cd desis.cl 
     ```
+
+3. Editar el archivo ` controller/db.php ` y colocar los datos correpondientes a su servidor mydql
+    
